@@ -166,6 +166,37 @@ Le deuxième graphique représente la distribution normalisée de l'énergie pot
 
 Le premier graphique est le graphique des scores Z, illustrant l'énergie potentielle de la structure en fonction de la position de chaque résidu dans la séquence. Les zones en bleu foncé correspondent aux régions de la protéine où l'énergie potentielle est minimale, traduisant une stabilité accrue de la structure. Les zones en jaune ou rouge (absentes dans ce graphique) indiquent des régions où l'énergie potentielle est plus élevée, signalant une stabilité réduite de la structure.
 
-![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 020](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/53d2c538-e6d2-4b35-a480-fc4976e2d643)
+![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 025](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/54596b07-eb41-4237-87d2-5aee9defa45a)
 
+Évaluation de la fidélité du modèle d'homologie de l'α-amylase par comparaison avec la structure cristalline
+L'alignement entre la structure modélisée et la structure cristalline constitue une étape essentielle pour évaluer la qualité du modèle. Cela permet de confronter la disposition spatiale prédite avec celle réellement observée dans la structure expérimentale. Le logiciel PyMol permet d'effectuer cet alignement en utilisant les atomes de carbone alpha comme points de référence.
 
+Ce genre d'analyse procure des informations quant à la précision de la prédiction de la structure et identifie les régions susceptibles de contenir des erreurs.
+
+Pour ce faire, ouvrez les fichiers de modèle (alpha_amy.B99990010.pdb), de cristal (1aqm.pdb) et de modèle (1jd7_clean.pdb) dans une nouvelle session PyMol. Ensuite, saisissez les commandes suivantes :
+
+select reference, 1aqm_1 and name CA
+mob_model, alpha_amy.B99990010 and name CA
+align mob_model, reference
+
+Cela effectuera l'alignement entre le modèle mobile (votre modèle d'homologie), défini par les atomes CA, et la référence (la structure cristalline), également définie par les atomes CA.
+
+![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 026](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/cbd048e8-e736-453c-ba12-de6f6e0043bc)
+
+Les résultats signalent que l'alignement des atomes CA des deux structures (notre modèle et la structure de référence) s'est déroulé avec succès. Le RMSD, couramment exprimé en Å (angstroms), peut être employé pour évaluer la qualité de l'alignement. Dans ce cas précis, le RMSD de 0,355 angströms dénote une correspondance très précise entre les deux structures. Cette constatation suggère que notre modèle d'α-amylase se rapproche considérablement de la structure cristalline de référence et est apte à être utilisé pour des analyses et des prédictions ultérieures.
+
+De manière similaire, effectuez l'alignement entre la structure du modèle (alpha_amy.B99990010.pdb) et la structure cristalline (1aqm.pdb).
+
+Insérez les commandes suivantes :
+select mob_template, 1jd7_clean and name CA
+align mob_template, reference
+
+Ceci permettra l'alignement entre la partie mobile du modèle (définie par les atomes CA), et le référentiel (la structure cristalline), également caractérisée par les atomes CA.
+
+![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 027](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/bda796a5-bdd0-44ba-909a-175d222b8f73)
+
+Les résultats révèlent que l'alignement du modèle avec la structure de référence présente un RMSD de 0,355 Å, tandis que l'alignement du modèle avec le Template présente un RMSD de 0,320 Å. Ces constatations suggèrent que tant le modèle que le Template sont étroitement alignés avec la structure de référence, et que le modèle est de qualité adéquate pour être exploité dans des études subséquentes.
+
+En conclusion :
+
+Après les évaluations effectuées précédemment, il est plausible de considérer le modèle alpha_amy.B99990010 comme une approximation solide de la véritable structure de l'α-amylase issue d'Alteromonas haloplanktis.
