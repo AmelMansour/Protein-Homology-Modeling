@@ -11,9 +11,10 @@ Parmi les diverses méthodes de modélisation moléculaire, la modélisation com
 Étape 1 : Identification d'une protéine homologue en tant que modèle pour la séquence cible :
 En se référant à la base de données UniProt (http://www.uniprot.org/), la séquence de l'α-amylase (AA) d'Alteromonas haloplanktis est recherchée. Pour obtenir la séquence de la protéine mature, les séquences de signalisation ainsi que les éventuels propeptides sont exclus. 
 La séquence de la protéine mature est ensuite copiée au format FASTA dans un nouveau fichier baptisé « alpha_amy.txt ».
-![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 003](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/2c4451ce-f330-47af-889d-6188ddc83b91)
-![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 002](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/78e02fad-71f8-4769-9f5d-3bd3adaad2c9)
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 001](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/4da670c4-31ea-4210-b49b-4c182ad15135)
+![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 002](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/78e02fad-71f8-4769-9f5d-3bd3adaad2c9)
+![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 003](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/2c4451ce-f330-47af-889d-6188ddc83b91)
+
 
 Utiliser l'outil Blast pour analyser la séquence cible :
 
