@@ -29,7 +29,8 @@ Quelles sont les caractéristiques et fonctions des protéines identifiées (tel
 Quelle est l'étendue maximale de l'alignement et quel pourcentage d'identité présente le meilleur alignement obtenu ?![Aspose Words 
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 004](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/8e66fa03-7a53-491b-858b-4dfcd3599b59)
-f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 005](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/a7e3319a-76c5-4fc3-866b-260308763465)
+![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 005](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/6e585e67-4242-46f2-8677-d776e4cb6af9)
+
 
 Le choix du modèle (Template) est porté sur « Chaîne A, ALPHA-AMYLASE [Pseudoalteromonas haloplanktis] » (1JD7).
 
