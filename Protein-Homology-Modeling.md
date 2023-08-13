@@ -9,18 +9,19 @@ La détermination expérimentale de la structure 3D des protéines requiert souv
 Parmi les diverses méthodes de modélisation moléculaire, la modélisation comparative est actuellement considérée comme l'une des plus précises. Ce rapport se penchera sur l'application d'une telle modélisation comparative à l'exemple de l'α-amylase (AA) issue d'Alteromonas haloplanktis.
 
 Étape 1 : Identification d'une protéine homologue en tant que modèle pour la séquence cible :
+
 En se référant à la base de données UniProt (http://www.uniprot.org/), la séquence de l'α-amylase (AA) d'Alteromonas haloplanktis est recherchée. Pour obtenir la séquence de la protéine mature, les séquences de signalisation ainsi que les éventuels propeptides sont exclus. 
 La séquence de la protéine mature est ensuite copiée au format FASTA dans un nouveau fichier baptisé « alpha_amy.txt ».
+
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 001](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/4da670c4-31ea-4210-b49b-4c182ad15135)
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 002](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/78e02fad-71f8-4769-9f5d-3bd3adaad2c9)
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 003](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/2c4451ce-f330-47af-889d-6188ddc83b91)
 
 
-Utiliser l'outil Blast pour analyser la séquence cible :
-
-Sélectionner l'outil "blastP" spécifique aux protéines.
-
-Copier la séquence ou charger le contenu du fichier "alpha_amy.txt", puis choisir la base de données PDB.
+* Utiliser l'outil Blast pour analyser la séquence cible :
+- Sélectionner l'outil "blastP" spécifique aux protéines.
+- Copier la séquence ou charger le contenu du fichier "alpha_amy.txt" .
+- Choisir la base de données PDB.
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 004](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/8e66fa03-7a53-491b-858b-4dfcd3599b59)
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 005](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/6e585e67-4242-46f2-8677-d776e4cb6af9)
@@ -39,31 +40,31 @@ Le choix d'un modèle approprié est un aspect important de la modélisation str
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 006](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/533fc441-db79-470f-abe8-3e88b47155bb)
 
-Téléchargez le fichier de coordonnées (1jd7 .pdb) depuis le serveur de la PDB. Ce fichier représente la structure qui servira de modèle (Template) pour la modélisation.
+* Téléchargez le fichier de coordonnées (1jd7 .pdb) depuis le serveur de la PDB. Ce fichier représente la structure qui servira de modèle (Template) pour la modélisation.
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 007](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/5ef717a6-f049-4577-884e-995ba5ecb658)
 
 
 Étape 2 : Alignement des séquences cible et modèle
 
-Préparation du modèle :
-
-Utiliser un logiciel de visualisation de structures protéiques tel que PyMOL ou Chimera pour ouvrir le fichier "1jd7.pdb".
-Éliminer tous les hétéroatomes et molécules autres que la protéine elle-même, car ils ne sont pas requis pour la modélisation comparative.
+* Préparation du modèle :
+- Utiliser un logiciel de visualisation de structures protéiques tel que PyMOL ou Chimera pour ouvrir le fichier "1jd7.pdb".
+- Éliminer tous les hétéroatomes et molécules autres que la protéine elle-même.
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 008](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/4321e097-8c39-440c-b21f-139c37691ebd)
 
-Méthode alternative :
+** Méthode alternative :
 
-Il est possible d'effectuer ces ajustements directement à l'aide d'un éditeur de texte (comme Notepad, Sublime Text, Atom, pluma pour Unix).
-
-Enregistrer le fichier du modèle sous le format PDB en tant que « 1jd7_clean.pdb ».
-
-Utiliser un outil en ligne tel que https://zhanggroup.org/pdb2fasta/ pour convertir le fichier « 1jd7_clean.pdb » en format FASTA.
+On peut faire ces modifications directement avec un éditeur de texte (par exemple, Notepad, pluma pour Unix.)
+- Sauvegarder le fichier du Template en format PDB « 1jd7_clean.pdb ».
+-Convertir le fichier « 1jd7_clean.pdb » en format Fasta à l'aide d'un outil en ligne tel que https://zhanggroup.org/pdb2fasta/ .
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 009](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/fa1fade5-6b21-46af-ab52-e0570028692c)
 
-Visiter le site http://www.ebi.ac.uk/Tools/psa/emboss\_needle/ et insérer les séquences de la cible et du modèle dans les champs désignés à cet effet. Ensuite, appuyer sur le bouton "submit" pour obtenir l'alignement.
+Nous allons procéder à un alignement de séquences par paire entre le modèle et la cible à l'aide du programme Needle du logiciel EMBOSS.
+
+- Accéder au site http://www.ebi.ac.uk/Tools/psa/emboss_needle
+- Copier/coller les séquences de la cible et du Template dans les deux champs prévus à cet effet.
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 010](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/4b915911-3c04-4d74-b6b2-478d335d634a)
 
@@ -76,9 +77,9 @@ Enregistrer le résultat obtenu dans un fichier « alignement.txt ».
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 012](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/d84074c6-3a0f-4f24-932d-b1d29fb8e1f5)
 
 
-Étape 3 : Édification du modèle d'homologie :
+* Étape 3 : Édification du modèle d'homologie :
 
-Préparation du fichier de script Python :
+- Préparation du fichier de script Python :
 À ce stade, le fichier d'alignement "ali.pir" ainsi que le fichier de structure du modèle "1jd7_clean.pdb" sont disponibles. À présent, il est essentiel de créer un fichier de script Python qui guidera Modeller à travers les différentes phases de modélisation.
 
 Fabriquer un fichier de script Python intitulé "modeling.py" dans le même répertoire que les autres fichiers, en se conformant aux indications fournies dans la documentation de Modeller (section « Script file » : https://salilab.org/modeller/manual/node13.html#SECTION00661300000000000000 ).
@@ -93,12 +94,13 @@ $ mod10.4 modeling.py
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 014](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/d6732d72-a5ce-4491-b07f-46cf0fc5af7f)
 
-Étape 4 : Évaluation de la qualité du modèle d'homologie
+* Étape 4 : Évaluation de la qualité du modèle d'homologie
 
 L'évaluation de la qualité du modèle d'homologie revêt une importance primordiale au sein du processus de modélisation de protéines. Cette étape implique la vérification de la validité stéréochimique et de la qualité locale du modèle généré, dans le but de déterminer sa proximité avec la structure native de la protéine. Pour ce faire, divers outils et plateformes en ligne sont disponibles, tels que le serveur SwissModel, le serveur Prosa, Verify3D, ERRAT, ainsi que l'estimation du score DOPE local. L'objectif principal est d'identifier le modèle présentant la meilleure qualité, en vue de son utilisation dans des analyses ultérieures relatives à la structure et à la fonction de la protéine.
 
-Score DOPE (Discrete Optimized Protein Energy) :
-Le score DOPE évalue la qualité globale du modèle en termes d'énergie et de probabilité de correspondre à la structure native. En général, un score DOPE plus bas indique un modèle de meilleure qualité, car cela traduit une énergie réduite et une plus grande probabilité de proximité avec la structure native de la protéine.
+- Score DOPE (Discrete Optimized Protein Energy) :
+Est un potentiel statistique couramment utilisé dans la prédiction et la modélisation de la structure des protéines. Le score DOPE estime la qualité d'un modèle de protéine en fonction de sa capacité à s'adapter aux données expérimentales connues, telles que les données de la cristallographie aux rayons X ou de la résonance magnétique nucléaire (RMN).
+En d'autres termes, le score DOPE est une mesure de la capacité d'un modèle protéique particulier à reproduire des données expérimentales, les scores les plus bas indiquant des modèles de meilleure qualité car cela signifie qu'il a la plus faible énergie et la plus grande probabilité d'être proche de la structure native de la protéine.
 
 Le score DOPE du modèle est spécialement conçu pour choisir le modèle optimal parmi une série de modèles construits par le logiciel MODELLER.
 
@@ -119,8 +121,8 @@ Calcul du score DOPE à l'aide de la commande Get dans PowerShell (équivalent d
 
 Habituellement, le modèle présentant le score DOPE le plus bas est considéré comme le meilleur choix pour le modèle de la protéine cible. (Modèle 10 : alpha_amy.B99990010.pdb)
 
-Approche DOPE normalisée :
-Le score DOPE n'est pas normalisé par rapport à la taille de la protéine et est échelonné de manière arbitraire, ce qui complique la comparaison entre les scores de différentes protéines. Pour pallier cette limitation, la méthode DOPE normalisée permet de calculer un score Z, qui s'avère utile pour comparer les scores DOPE entre divers modèles.
+- DOPE normalisée
+Les scores DOPE rendent difficile la comparaison des scores entre différentes protéines. Pour surmonter cette limitation, la méthode DOPE normalisée consiste à normaliser le score DOPE pour prendre en compte la taille de la protéine. Cela permet de comparer des modèles de protéines de tailles différentes. Pour surmonter cette limitation, la méthode DOPE normalisée permet de calculer un score Z, qui peut être utilisé pour comparer les scores DOPE de différents modèles.
 
 Les scores positifs tendent à indiquer des modèles de moindre qualité, tandis que les scores en dessous de -1 ou plus sont plus susceptibles d'être proches du modèle natif. (Modèle 10 : alpha_amy.B99990010.pdb)
 
@@ -131,37 +133,40 @@ Calcul du Z-score avec la commande « model.assess_normalized_dope()»
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 019](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/48eeb66e-9c76-4e6f-bd1e-3cb7ca765c67)
 
 
-Graphique de Ramachandran
-Le graphique de Ramachandran constitue un outil de grande importance pour l'évaluation de la qualité stéréochimique d'un modèle. Il permet de visualiser la répartition des angles de torsion φ et ψ pour chaque résidu dans une structure protéique. Les angles de torsion admis sont regroupés en différentes zones sur le graphique de Ramachandran, incluant les zones permises, les zones favorables et les zones défavorables.
-
-Pour évaluer la validité stéréochimique des modèles choisis, ils peuvent être soumis au serveur Web suivant : https://swissmodel.expasy.org/assess.
+* Graphique de Ramachandran
+  
+Le diagramme de Ramachandran est un outil graphique utilisé pour évaluer la qualité de la structure des protéines en fonction des angles de torsion des liaisons peptidiques dans la chaîne polypeptidique. Il affiche les angles de torsion Phi (ϕ) et Psi (ψ) pour chaque résidu d'acide aminé dans une protéine. Les angles de torsion sont calculés à partir des positions des atomes de carbone alpha des résidus adjacents dans la chaîne polypeptidique.
+Le diagramme de Ramachandran est largement utilisé pour évaluer la qualité des modèles de structures de protéines générées par modélisation informatique, ainsi que pour valider les structures expérimentales déterminées par cristallographie aux rayons X ou par résonance magnétique nucléaire.
+-Soumettre les modèles sélectionnés au serveur Web : https://swissmodel.expasy.org/assess et vérifie leur validité stéréochimique.
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 020](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/981ed6fa-cf0f-4f68-929f-d584fb99def3)
 
-En général, un modèle qui affiche des scores élevés pour les conformations favorables sur le graphique de Ramachandran, ainsi que des scores bas pour les conformations atypiques (outliers) et des scores faibles pour MolProbity et Clash, est considéré comme étant de bonne qualité stéréochimique. Dans l'ensemble, tous les modèles démontrent une qualité stéréochimique acceptable avec des scores élevés dans les zones permises du graphique de Ramachandran et des pourcentages très faibles de conformations latérales inappropriées.
+Un modèle avec des scores Ramachandran favorisés élevés et des scores Ramachandran faibles sont considérés comme de haute qualité car cela signifie que la structure protéique est bien pliée et que les angles dièdres des acides aminés sont conformes aux régions Ramachandran favorisées. Cela suggère également que la structure est stable et biologiquement viable.
+Des scores MolProbity et Clash faibles indiquent également une bonne qualité de modèle car ils mesurent la géométrie moléculaire et l'énergie stérique de la structure, respectivement. Des scores faibles signifient que la structure est bien pliée et que les atomes sont bien placés dans l'espace, ce qui est important pour le fonctionnement biologique de la protéine.
+En somme, un modèle avec des scores Ramachandran favorisés élevés et des scores Ramachandran faibles et des scores MolProbity et Clash faibles est considéré comme de haute qualité et indique une structure protéique bien pliée, stable et biologiquement viable. 
 
-Qualité locale du modèle
+--> Dans l'ensemble, tous les modèles démontrent une qualité stéréochimique acceptable avec des scores élevés dans les zones permises du graphique de Ramachandran et des pourcentages très faibles de conformations latérales inappropriées.
+
+* Qualité locale du modèle
 Le serveur Prosa analysera le modèle protéique et produira divers graphiques et résultats pour évaluer sa qualité.
 
-Accédez au site Web de Prosa : https://prosa.services.came.sbg.ac.at/prosa.php
+- Accédez au site Web de Prosa : https://prosa.services.came.sbg.ac.at/prosa.php
+- Cliquez sur "Choose File" et sélectionnez le fichier «alpha_amy.B99990010.pdb ».
+- Cliquez sur "Submit Query" pour soumettre votre fichier.
 
-Cliquez sur "Choose File" et sélectionnez le fichier «alpha_amy.B99990010.pdb ».
+#Le deuxième graphique représente la distribution normalisée de l'énergie potentielle. Il expose la répartition de l'énergie potentielle de la structure par rapport à une distribution normale. Les pics dans l'histogramme signalent les régions où l'énergie potentielle est élevée, indiquant ainsi une moindre stabilité structurelle. (Selon ce graphique, le modèle semble bien stable)
 
-Cliquez sur "Submit Query" pour soumettre votre fichier.
-
-Le deuxième graphique représente la distribution normalisée de l'énergie potentielle. Il expose la répartition de l'énergie potentielle de la structure par rapport à une distribution normale. Les pics dans l'histogramme signalent les régions où l'énergie potentielle est élevée, indiquant ainsi une moindre stabilité structurelle. (Selon ce graphique, le modèle semble bien stable)
-
-Le premier graphique est le graphique des scores Z, illustrant l'énergie potentielle de la structure en fonction de la position de chaque résidu dans la séquence. Les zones en bleu foncé correspondent aux régions de la protéine où l'énergie potentielle est minimale, traduisant une stabilité accrue de la structure. Les zones en jaune ou rouge (absentes dans ce graphique) indiquent des régions où l'énergie potentielle est plus élevée, signalant une stabilité réduite de la structure.
+#Le premier graphique est le graphique des scores Z, illustrant l'énergie potentielle de la structure en fonction de la position de chaque résidu dans la séquence. Les zones en bleu foncé correspondent aux régions de la protéine où l'énergie potentielle est minimale, traduisant une stabilité accrue de la structure. Les zones en jaune ou rouge (absentes dans ce graphique) indiquent des régions où l'énergie potentielle est plus élevée, signalant une stabilité réduite de la structure.
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 025](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/54596b07-eb41-4237-87d2-5aee9defa45a)
 
-Évaluation de la fidélité du modèle d'homologie de l'α-amylase par comparaison avec la structure cristalline
-L'alignement entre la structure modélisée et la structure cristalline constitue une étape essentielle pour évaluer la qualité du modèle. Cela permet de confronter la disposition spatiale prédite avec celle réellement observée dans la structure expérimentale. Le logiciel PyMol permet d'effectuer cet alignement en utilisant les atomes de carbone alpha comme points de référence.
+* Évaluation de la fidélité du modèle d'homologie de l'α-amylase par comparaison avec la structure cristalline
+  
+L'alignement entre la structure modélisée et la structure cristalline constitue une étape essentielle pour évaluer la qualité du modèle. Cela permet de confronter la disposition spatiale prédite avec celle réellement observée dans la structure expérimentale. 
+Le logiciel Pymol peut être utilisé pour effectuer l'alignement de la structure modélisée avec la structure expérimentale de référence et calculer le RMSD (signifie Root Mean Square Deviation, qui est une mesure de l'écart entre deux structures moléculaires) pour évaluer la précision de la modélisation d'homologie de l'α-amylase.
 
-Ce genre d'analyse procure des informations quant à la précision de la prédiction de la structure et identifie les régions susceptibles de contenir des erreurs.
-
-Pour ce faire, ouvrez les fichiers de modèle (alpha_amy.B99990010.pdb), de cristal (1aqm.pdb) et de modèle (1jd7_clean.pdb) dans une nouvelle session PyMol. Ensuite, saisissez les commandes suivantes :
-
+- Ouvrer les fichiers de modèle (alpha_amy.B99990010.pdb), de cristal (1aqm.pdb) et de modèle (1jd7_clean.pdb) dans une nouvelle session PyMol.
+- Saisir les commandes suivantes :
 select reference, 1aqm_1 and name CA
 mob_model, alpha_amy.B99990010 and name CA
 align mob_model, reference
@@ -172,9 +177,8 @@ Cela effectuera l'alignement entre le modèle mobile (votre modèle d'homologie)
 
 Les résultats signalent que l'alignement des atomes CA des deux structures (notre modèle et la structure de référence) s'est déroulé avec succès. Le RMSD, couramment exprimé en Å (angstroms), peut être employé pour évaluer la qualité de l'alignement. Dans ce cas précis, le RMSD de 0,355 angströms dénote une correspondance très précise entre les deux structures. Cette constatation suggère que notre modèle d'α-amylase se rapproche considérablement de la structure cristalline de référence et est apte à être utilisé pour des analyses et des prédictions ultérieures.
 
-De manière similaire, effectuez l'alignement entre la structure du modèle (alpha_amy.B99990010.pdb) et la structure cristalline (1aqm.pdb).
-
-Insérez les commandes suivantes :
+- De manière similaire, effectuez l'alignement entre la structure du modèle (alpha_amy.B99990010.pdb) et la structure cristalline (1aqm.pdb).
+- Insérez les commandes suivantes :
 select mob_template, 1jd7_clean and name CA
 align mob_template, reference
 
@@ -184,6 +188,6 @@ Ceci permettra l'alignement entre la partie mobile du modèle (définie par les 
 
 Les résultats révèlent que l'alignement du modèle avec la structure de référence présente un RMSD de 0,355 Å, tandis que l'alignement du modèle avec le Template présente un RMSD de 0,320 Å. Ces constatations suggèrent que tant le modèle que le Template sont étroitement alignés avec la structure de référence, et que le modèle est de qualité adéquate pour être exploité dans des études subséquentes.
 
-En conclusion :
+* En conclusion :
 
 Après les évaluations effectuées précédemment, il est plausible de considérer le modèle alpha_amy.B99990010 comme une approximation solide de la véritable structure de l'α-amylase issue d'Alteromonas haloplanktis.
