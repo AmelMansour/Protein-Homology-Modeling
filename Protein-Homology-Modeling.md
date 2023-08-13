@@ -22,12 +22,6 @@ Sélectionner l'outil "blastP" spécifique aux protéines.
 
 Copier la séquence ou charger le contenu du fichier "alpha_amy.txt", puis choisir la base de données PDB.
 
-Lancer le processus Blast et examiner les résultats obtenus :
-
-Quelles sont les caractéristiques et fonctions des protéines identifiées (telles que leur poids moléculaire) ?
-
-Quelle est l'étendue maximale de l'alignement et quel pourcentage d'identité présente le meilleur alignement obtenu ?![Aspose Words 
-
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 004](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/8e66fa03-7a53-491b-858b-4dfcd3599b59)
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 005](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/6e585e67-4242-46f2-8677-d776e4cb6af9)
 
