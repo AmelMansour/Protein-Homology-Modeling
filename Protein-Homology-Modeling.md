@@ -25,26 +25,17 @@ Copier la séquence ou charger le contenu du fichier "alpha_amy.txt", puis chois
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 004](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/8e66fa03-7a53-491b-858b-4dfcd3599b59)
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 005](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/6e585e67-4242-46f2-8677-d776e4cb6af9)
 
+Le choix d'un modèle approprié est un aspect important de la modélisation structurelle comparative (CSM). Voici quelques critères importants à prendre en compte lors du choix d'un modèle :
 
-Le choix du modèle (Template) est porté sur « Chaîne A, ALPHA-AMYLASE [Pseudoalteromonas haloplanktis] » (1JD7).
+• Similitude de séquence : la matrice doit avoir une similarité de séquence suffisamment élevée avec la protéine cible pour rendre les prédictions de structure plus fiables. En général, une similarité de séquence d'au moins 30 % est recommandée.
 
-Généralement, la sélection repose sur des critères bien définis :
+• Qualité de la structure : le modèle doit avoir une structure 3D qui est résolue avec une qualité adéquate, mesurée par des paramètres tels que la résolution, E-value, le nombre de résidus manquants, le taux de couverture….
 
-Éviter les protéines synthétiques, les fragments et les protéines mutantes.
+• Fonction biologique : Nous devons savoir que la matrice à une fonction biologique similaire à celle de la protéine cible. Les protéines homologues ayant des fonctions biologiques similaires ont tendance à avoir des structures similaires.
 
-Privilégier les protéines naturelles, et dans le pire des cas, les protéines recombinantes.
+• Disponibilité de la structure : le modèle doit être disponible dans une base de données de structure de protéines telle que la base de données PDB ou UniProt.
 
-Opter pour un pourcentage d'identité de séquence plus élevé avec la protéine cible.
-
-Préférer les structures résolues par cristallographie aux rayons X.
-
-Viser la meilleure résolution possible (avec un nombre d'Angströms plus petit).
-
-Éviter la redondance entre les modèles (templates), en favorisant la plus grande diversité possible.
-
-Sélectionner des modèles de taille similaire à celle de la protéine cible.
-
-Si possible, privilégier une fonction biologique similaire.
+--> Le choix du modèle (Template) est porté sur « Chaîne A, ALPHA-AMYLASE [Pseudoalteromonas haloplanktis] » (1JD7).
 
 ![Aspose Words f7fc63ad-96a3-474b-ba4a-1ff6b42ed1cd 006](https://github.com/AmelMansour/Protein-Homology-Modeling/assets/141269604/533fc441-db79-470f-abe8-3e88b47155bb)
 
