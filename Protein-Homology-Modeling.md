@@ -1,5 +1,5 @@
 # Protein-Homology-Modeling
-Modélisation comparative de la structure de l'α-amylase (AA) d'Alteromonas haloplanktis :
+Modélisation comparative de la structure de l'α-amylase (AA) d'Alteromonas haloplanktis:
 
 Introduction :
 
